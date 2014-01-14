@@ -1,0 +1,52 @@
+<!doctype html>
+<!--  Iniciamos o mandamos llamar a angularjs desde el comienzo de la página  
+	Recuerda que si iniciamos angularjs de esta forma no se reflejara  el valor o resultado esperado.-->
+<html ng-app>
+	<head>
+		<!-- Integramos AngularJs,  y Lista.js -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+		<script src="lista.js"></script>
+		<!-- Integramos los estilos de bootstrap -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	</head>
+	<body>
+		<!--         Crearemos el div con los controles en este caso NG-Controller        
+			llamado listaCtrl    -->
+		<div ng-controller="listaCtrl">
+			<!--           A continuación se reflejara el valor de este "método"           
+				que se encuentra dentro del controlador listaCtrl      -->
+			<p>
+				Totales de la lista: {{totalLista}}
+			</p>
+			<!--         Ahora vamos a sumar el totalLista y lo reflejaremos,        
+				pero la suma la realizaremos de dos maneras la primera en una        
+				suma de métodos y la otra en forma lineal donde las dos        
+				reflejaran el mismo valor      -->
+			<p>
+				Suma de listas; suma1: {{sumaLista}} , suma2: {{totalLista+8}}
+			</p>
+			<!--         Ahora crearemos una lista desordenada con la ayuda de bootstrap.css      -->
+			<p>
+				<ul class="list-unstyled">
+					<!--             Aquí usaremos la magia de AngularJS  con el atributo ng-repeat            
+						donde verán una sintaxis básica, indicando que existe una             
+						lista dentro de listas que vienen del $scope.listas.            
+						"filter" es para filtrar resultados lo veremos mas adelante          -->
+					<li ng-repeat="lista in listas | filter:filtro2">
+						<!--                Ahora lo que queremos es que se imprima en pantalla                
+							el nombre de cada lista que existe dentro de "listas"              -->
+						{{lista.nombre}}
+					</li>
+				</ul>
+			</p>
+			<!--              Ya para cerrar la primera explicacione que tenemos de AngularJS              
+				no me quiero ir sin antes mostrarle un poco  mas de magia con la que cuenta              
+				este FrameWork, vamos a filtrar los resultados de forma rapida              
+				solo indicando el nombre del "filtro"             -->
+			<div>
+				Filtrar:
+				<input ng-model="filtro2">
+			</div>
+		</div>
+	</body>
+</html>
