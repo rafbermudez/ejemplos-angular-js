@@ -1,0 +1,25 @@
+<!-- Ejemplo extraído  desde la web de AngularJS -->
+<!doctype html>
+<!-- Con esta etiqueta ng-app le estamos indicando a AngularJs  desde donde debe de estar activo... 
+	en este caso estará activo desde la etiqueta HTML pero puede estar "activo" desde la ubicación que 
+	seanecesario ósea puedes activarlo desde un div o section cualquiera.-->
+<html ng-app>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<label>Nombre:</label>
+			<!--         Ahora vamos a ver el atributo (directiva) ng-model ubicado dentro de nuestro  
+				input, con este        atributo es la forma de unir nuestro formulario y modelo 
+				especifico en este caso el "modelo"         tuNombre      -->
+			<input type="text" ng-model="tuNombre" placeholder="Introduce tu nombre">
+			<hr>
+			<!--       Ahora llamaremos el modelo o el resultado que debe devolver 
+				este modelo (tuNombre)  esto        dentro de llaves dobles "{{ aqui el modelo }}" 
+				haciendo que lo que escribas  dentro del input        
+				se refleje de forma inmediata en nuestro DOM (documento)...      -->
+			<h1>Hola {{tuNombre}}!</h1>
+		</div>
+	</body>
+</html>
