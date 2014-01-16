@@ -1,0 +1,35 @@
+<!doctype html> <!--  Iniciamos o mandamos llamar a angularjs desde el comienzo de la página
+Recuerda que si iniciamos angularjs de esta forma no se reflejara  el valor o resultado esperado.-->
+<html ng-app>
+	<head>
+		<!-- Integramos AngularJs,  y Lista.js -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+		<script src="lista.js"></script>
+		<!-- Integramos los estilos de bootstrap -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	</head>
+	<body>
+		<!--         Crearemos el div con los controles en este caso NG-Controller
+		llamado listaCtrl    -->
+		<div ng-controller="listaCtrl">
+			
+			<!--         Pintamos la lista de frutas-->
+			<h1>Lista de frutas</h1>
+			<ul >
+				<li ng-repeat='fruta in frutas'>
+					{{fruta.nombre}}
+				</li>
+			</ul>
+			<!--         Añadimos los botones para insertar una nueva fruta al final-->
+			<button ng-click="insertFruta('manzana')">
+				Insertar manzana
+			</button>
+			<button ng-click="insertFruta('pera')">
+				Insertar pera
+			</button>
+			<button ng-click="insertFruta('naranja')">
+				Insertar naranja
+			</button>
+		</div>
+	</body>
+</html>
