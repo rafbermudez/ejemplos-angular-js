@@ -1,0 +1,32 @@
+<!doctype html> <!--  Iniciamos o mandamos llamar a angularjs desde el comienzo de la página
+Recuerda que si iniciamos angularjs de esta forma no se reflejara  el valor o resultado esperado.-->
+<html ng-app>
+	<head>
+		<!-- Integramos AngularJs,  mostrarErrores.js -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+		<script src="mostrarErrores.js"></script>
+		<!-- Integramos los estilos de style.css -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<!--         Crearemos el div con los controles en este caso NG-Controller
+		llamado headerController    -->
+		<div ng-controller="headerController">
+
+			<!--         Zona de muestra del error o warning -->
+				***************** zona error/warning
+				<div ng-class='{error: isError, warning: isWarning}'>
+					{{messageText}}
+				</div>
+				*****************
+				
+				<!--         Botones para mostrar el error o warning -->
+				<button ng-click='showError()'>
+					Simular Error
+				</button>
+				<button ng-click='showWarning()'>
+					Simular Warning
+				</button>
+		</div>
+	</body>
+</html>
